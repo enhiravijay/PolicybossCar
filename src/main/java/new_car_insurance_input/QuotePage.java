@@ -13,6 +13,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Wait;
 
 import basePage.BasePage;
+import utility.Log;
 
 public class QuotePage extends BasePage{
 
@@ -36,6 +37,11 @@ public class QuotePage extends BasePage{
 	
 	@FindBy(xpath = "//span[@id='RTOName']")
 	WebElement GetRto;
+	
+	@FindBy(xpath = "//div[@id='LoaderImg']")
+	WebElement GetLoader;
+	
+	
 	
 	// getInsurerName //div[@class='boxLeft img2 pad-lft']/img
 	// getIdv //li[@class='LiClass']/div[@class='boxLeft resultPrice pad-lft dynamic']/h5/text()
@@ -84,6 +90,8 @@ public class QuotePage extends BasePage{
 	
 	public  Map<Integer, Map<Integer, List<String>>> getQuoteDetails() {
 		// Insurance name details
+		
+		waitForElementToBeGone(GetLoader, 1000);
 		List<WebElement> insurer = Insurers.findElements(By.xpath("//div[@class='boxLeft img2 pad-lft']/img[@sname]"));
 		int insurerSize = insurer.size();
 		// Idv details
@@ -99,6 +107,7 @@ public class QuotePage extends BasePage{
 		String InsurerCount = NoofInsureris.toString();
 		String Variandetail = getVariantdetails();
 		String Rtodetail = getRtodetails();
+		
 		List<String> insData = new ArrayList<String>();
 		insData.add(crnvalis);
 		insData.add(Variandetail);
@@ -116,7 +125,9 @@ public class QuotePage extends BasePage{
 		for(int i = 0;i<insurerSize;i++) {
 			List<String> datalist = new ArrayList<String>();
 			//Object[] insdata = insDataMap.putAll(insurer.get(i).getAttribute("alt"));
-			waitHandle(driver, Insurers, 20000);
+			//waitHandle(driver, Insurers, 20000);
+			//waitForElementToBeGone(GetLoader, 1000);
+			//loadingWait(driver, GetLoader);
 			datalist.add(insurer.get(i).getAttribute("alt"));
 			String premiumtxt = premEle.get(i).getText();
 			String premiumValue = premiumtxt.replaceAll("[^a-zA-Z0-9]", "");

@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -16,6 +18,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import basePage.BasePage;
 import utility.ExcelUtils;
+import utility.Log;
 
 public class New_car_input_page extends BasePage {
 
@@ -184,10 +187,15 @@ public class New_car_input_page extends BasePage {
 	
 	public void enterMakeModel2(String Vehicle,String Model) {
 		try {
+			final Logger logger = Log.getLogData(Log.class.getName());
+			
+			waitHandle(driver, MakeMyModel, 20);
 			System.out.println("into enter MakeModel");
 			MakeMyModel.click();
 			MakeMyModel.sendKeys(Vehicle);
 			handleAutoDropDown(autoOptions, Model);
+			logger.info("Entered make Model");
+			
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.out.println("Make Model Not Entered");
@@ -212,10 +220,12 @@ public class New_car_input_page extends BasePage {
 	}
 
 	public void selectFuelType(String fueltype) throws Exception {
+		waitHandle(driver, SelectFuelType, 20);
 		handleDropDown(SelectFuelType, fueltype);
 	}
 
 	public void selectVariant(String variant) throws Exception {
+		waitHandle(driver, SelectVariant, 20);
 		handleDropDown(SelectVariant, variant);
 	}
 
@@ -231,10 +241,14 @@ public class New_car_input_page extends BasePage {
 	}
 
 	public void selectPlaceOfRegistration(String City, String Place) {
+		//final Logger logger = Log.getLogData(Log.class.getName());
+		final Logger logger = Log.getLogData(Log.class.getName());
+		logger.info("entering place of registeration");
 		PlaceOfRegistration.sendKeys(City);
 		WebElement moveelem = driver.findElement(By.xpath("//div[contains(.,'" + Place + "')]"));
 		Actions actions = new Actions(driver);
 		actions.moveToElement(moveelem).click().build().perform();
+		logger.info("entered place of registration");
 	}
 
 	public void selectManfcMonth(String monthValue, String yearValue) throws Exception {
@@ -281,12 +295,15 @@ public class New_car_input_page extends BasePage {
 	}
 
 	public void selectPolicyExpiryDate() throws Exception {
+		final Logger logger = Log.getLogData(Log.class.getName());
+		logger.info("entering policy details");
 		Thread.sleep(1000);
 		SelectPolicyExpDate.click();
 		selectMonth(GetRegMonthText, ExcelUtils.getMapData("SelectPolicyExpMonth"));
 		selectYear(GetFirstRegYearText, ExcelUtils.getMapData("SelectPolicyExpYear"));
 		selectDay(ExcelUtils.getMapData("SelectPolicyExpDay"));
 		ClickfirstRegOK.click();
+		logger.info("entered policy details");
 	}
 
 	public void selectPreviousInsurer(String previousinsurer) throws Exception {
@@ -305,11 +322,17 @@ public class New_car_input_page extends BasePage {
 	}
 
 	public void enterFullName(String fullname) {
+		final Logger logger = Log.getLogData(Log.class.getName());
+		logger.info("entering fullname");
 		EnterFullName.sendKeys(fullname);
+		logger.info("entered fullname");
 	}
 
 	public void enterMobile(String MobileNo) {
+		final Logger logger = Log.getLogData(Log.class.getName());
+		logger.info("entering Mobile no");
 		EnterMobile.sendKeys(MobileNo);
+		logger.info("entered Mobile no");
 	}
 
 	public void clickCalculateQuote() {
@@ -434,7 +457,9 @@ public class New_car_input_page extends BasePage {
 		}
 	}
 	public void enterVehicleDetail() throws Exception {
-		System.out.println("Started Entering Vehicle Detail");
+		//System.out.println("Started Entering Vehicle Detail");
+		final Logger logger = Log.getLogData(Log.class.getName());
+		logger.info("entering vehicle details");
 		selectRenewsec();
 		//enterMakeModel(ExcelUtils.getMapData("Vehicle"),ExcelUtils.getMapData("Model"));
 		enterMakeModel2(ExcelUtils.getMapData("Vehicle"),ExcelUtils.getMapData("Model"));
@@ -444,10 +469,13 @@ public class New_car_input_page extends BasePage {
 		selectPlaceOfRegistration(ExcelUtils.getMapData("SelectCity"),ExcelUtils.getMapData("SelectPlace"));
 		IsVehFinance(ExcelUtils.getMapData("SelectVehFinanced"),ExcelUtils.getMapData("SelectFinanceAmt"));
 		clickNextDetail();
-		System.out.println("Entered Vehicle Detail completely ");
+		logger.info("entered vehicle details");
+		
+		
 	}
 	
 	public void enterPolicyDetail() throws Exception {
+		
 		selectComprehensivePolicy(ExcelUtils.getMapData("SelectComprehensivePolicy"));
 		selectPolicyExpiryDate();
 		selectPreviousInsurer(ExcelUtils.getMapData("SelectPreviousInsurer"));

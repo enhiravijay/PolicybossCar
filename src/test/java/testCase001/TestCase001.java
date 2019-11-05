@@ -7,11 +7,13 @@ import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import new_car_insurance_input.New_car_input_page;
@@ -19,6 +21,7 @@ import new_car_insurance_input.QuotePage;
 import testBase.TestBase;
 import utility.Constant;
 import utility.ExcelUtils;
+import utility.Log;
 
 public class TestCase001 extends TestBase {
 	//public WebDriver driver;
@@ -29,24 +32,24 @@ public class TestCase001 extends TestBase {
 	public int iTestCaseRow1 = 2;
 	public int iTestCaseRow3 = 3;
 	
-	@BeforeMethod
+	@BeforeTest
 	public void beforeMethod() throws Exception {
 		openBrowser();
 		prop = getprop();
 		EU = new ExcelUtils();
 		//ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Sheet1");
-		System.out.println("dfdf");
+		System.out.println("sssttttaaarrrttt");
 		driver.get(prop.getProperty("qaurl"));
-		Logger logger = Logger.getLogger(TestCase001.class);
+		
 	}
 	
 	@Test
 	public void Test0001() throws Exception {
 		New_car_input_page car = new New_car_input_page(driver);
+		//Log.startLog(Class.forName(TestCase001));
 		car.enterVehicleDetail();
 		car.enterPolicyDetail();
 		car.enterPsnlDetail();
-		
 		QuotePage quote = new QuotePage(driver);
 		quote.getCrn();
 		quote.getQuoteDetails();
