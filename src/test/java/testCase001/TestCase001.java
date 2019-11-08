@@ -89,6 +89,7 @@ public class TestCase001 extends TestBase {
 		test.log(LogStatus.INFO, "Data written successfully in Excel");
 		//boolean vrcrn = quote.verifyCrn();
 		System.out.println("insurer given is present or not "+quote.ifInsurerPresent());
+		quote.buyInsurer();
 		Assert.assertTrue(quote.verifyCrn());
 		//Assert.assertTrue(false);
 	}

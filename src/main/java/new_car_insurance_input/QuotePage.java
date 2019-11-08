@@ -39,9 +39,7 @@ public class QuotePage extends BasePage{
 
 	@FindBy(xpath = "//div[@id='LoaderImg']")
 	WebElement GetLoader;
-
-
-
+	
 	// getInsurerName //div[@class='boxLeft img2 pad-lft']/img
 	// getIdv //li[@class='LiClass']/div[@class='boxLeft resultPrice pad-lft dynamic']/h5/text()
 	// getPremium //div[@class='boxLeft pad-rht dynamic']/a/span
@@ -218,6 +216,26 @@ public class QuotePage extends BasePage{
 		boolean valueis = ifInsurerPresent();
 		if(valueis) {
 			//div[@class='boxLeft img2 pad-lft']/img[contains(@title, 'Tata')]
+			List<WebElement> Liclass = driver.findElements(By.xpath("//li[@class='LiClass']"));
+			int liCount = Liclass.size();
+			
+			List<WebElement> buyIns = driver.findElements(By.xpath("//div[@class='boxLeft pad-rht dynamic']/a"));
+			for (int i = 0;i<liCount;i++) {
+				List<WebElement> insurer = Insurers.findElements(By.xpath("//div[@class='boxLeft img2 pad-lft']/img[@sname]"));
+				int insurerSize = insurer.size();
+				String instext = insurer.get(i).getAttribute("alt");
+				System.out.println("Insurer to be bought is "+ instext);
+				if(instext.contains(ExcelUtils.getMapData("IsInsurerPresent"))) {
+					buyIns.get(i).click();
+					Thread.sleep(100);
+					driver.findElement(By.xpath("//div[@class='popupScreen']/div[@class='popupclose']")).click();
+					break;
+				}
+				
+			}
+			
+		}else {
+			System.out.println("given insurer is not present");
 		}
 	}
 }
