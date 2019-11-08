@@ -1,17 +1,19 @@
 package basePage;
 
-import org.openqa.selenium.By;
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import utility.Log;
+import utility.Constant;
 
 public class BasePage  {
 	
@@ -60,5 +62,21 @@ public class BasePage  {
 	        new WebDriverWait(driver, timeout).until(ExpectedConditions.not(ExpectedConditions.visibilityOf(element)));
 	    }
 	}
+	
+	public void jsExecute(WebElement element) {
+		//WebElement  element=driver.findElement(By.xpath"");  
+		JavascriptExecutor ex=(JavascriptExecutor)driver;
+		ex.executeScript("arguments[0].click()", element);
+	}
+	
+	public  String capture(String screenshotName) throws IOException {
+        TakesScreenshot ts = (TakesScreenshot) driver;
+        File source = ts.getScreenshotAs(OutputType.FILE);
+        String dest = Constant.Path_ScreenShot;
+        File destination = new File(dest);
+        FileUtils.copyFile(source, destination);
+ 
+        return dest;
+    }
 
 }

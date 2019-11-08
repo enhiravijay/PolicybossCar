@@ -491,7 +491,8 @@ public class New_car_input_page extends BasePage {
 		EnterOTP.sendKeys("1111");
 		SelectVerifyBtn.click();
 		Thread.sleep(10000);
-		ClosePopup.click();
+		//ClosePopup.click();
+		jsExecute(ClosePopup);
 	}
 	
 

@@ -5,7 +5,10 @@
     <classes>
       <class name="testCase001.TestCase001">
         <methods>
+          <include name="beforeSuite"/>
+          <include name="afterSuite"/>
           <include name="Test0001"/>
+          <include name="beforeTest"/>
           <include name="screenShot"/>
           <include name="beforeMethod"/>
         </methods>

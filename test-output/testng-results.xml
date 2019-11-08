@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="88958" started-at="2019-11-05T12:51:54Z" finished-at="2019-11-05T12:53:23Z">
+  <suite name="Default suite" duration-ms="73151" started-at="2019-11-07T13:01:40Z" finished-at="2019-11-07T13:02:54Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="88958" started-at="2019-11-05T12:51:54Z" finished-at="2019-11-05T12:53:23Z">
+    <test name="Default test" duration-ms="73151" started-at="2019-11-07T13:01:40Z" finished-at="2019-11-07T13:02:54Z">
       <class name="testCase001.TestCase001">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:testCase001.TestCase001@543e710e]" name="beforeSuite" is-config="true" duration-ms="229" started-at="2019-11-05T12:51:54Z" finished-at="2019-11-05T12:51:54Z">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:testCase001.TestCase001@44f75083]" name="beforeSuite" is-config="true" duration-ms="273" started-at="2019-11-07T13:01:40Z" finished-at="2019-11-07T13:01:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:testCase001.TestCase001@543e710e]" name="beforeTest" is-config="true" duration-ms="19658" started-at="2019-11-05T12:51:54Z" finished-at="2019-11-05T12:52:14Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:testCase001.TestCase001@44f75083]" name="beforeTest" is-config="true" duration-ms="21361" started-at="2019-11-07T13:01:40Z" finished-at="2019-11-07T13:02:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:testCase001.TestCase001@543e710e]" name="beforeMethod" is-config="true" duration-ms="7" started-at="2019-11-05T12:52:14Z" finished-at="2019-11-05T12:52:14Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:testCase001.TestCase001@44f75083]" name="beforeMethod" is-config="true" duration-ms="111" started-at="2019-11-07T13:02:02Z" finished-at="2019-11-07T13:02:02Z">
           <params>
             <param index="0">
               <value>
@@ -26,22 +26,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="Test0001()[pri:0, instance:testCase001.TestCase001@543e710e]" name="Test0001" duration-ms="69266" started-at="2019-11-05T12:52:14Z" finished-at="2019-11-05T12:53:23Z">
+        <test-method status="PASS" signature="Test0001()[pri:0, instance:testCase001.TestCase001@44f75083]" name="Test0001" duration-ms="51251" started-at="2019-11-07T13:02:02Z" finished-at="2019-11-07T13:02:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test0001 -->
-        <test-method status="PASS" signature="screenShot(org.testng.ITestResult)[pri:0, instance:testCase001.TestCase001@543e710e]" name="screenShot" is-config="true" duration-ms="0" started-at="2019-11-05T12:53:23Z" finished-at="2019-11-05T12:53:23Z">
+        <test-method status="PASS" signature="screenShot(org.testng.ITestResult)[pri:0, instance:testCase001.TestCase001@44f75083]" name="screenShot" is-config="true" duration-ms="0" started-at="2019-11-07T13:02:54Z" finished-at="2019-11-07T13:02:54Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=Test0001 status=SUCCESS method=TestCase001.Test0001()[pri:0, instance:testCase001.TestCase001@543e710e] output={null}]]]>
+                <![CDATA[[TestResult name=Test0001 status=SUCCESS method=TestCase001.Test0001()[pri:0, instance:testCase001.TestCase001@44f75083] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- screenShot -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:testCase001.TestCase001@543e710e]" name="afterSuite" is-config="true" duration-ms="324" started-at="2019-11-05T12:53:23Z" finished-at="2019-11-05T12:53:24Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:testCase001.TestCase001@44f75083]" name="afterSuite" is-config="true" duration-ms="427" started-at="2019-11-07T13:02:54Z" finished-at="2019-11-07T13:02:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->

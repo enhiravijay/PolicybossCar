@@ -11,5 +11,5 @@ public class Constant {
 		//public static final int Col_TestCaseName = 01111;	
 		public static final int Col_Result = 3;
 		public static final int Col_RunMode = 2;
-		public static final String Path_ScreenShot = "src//main//resources//Screenshots//";
+		public static final String Path_ScreenShot = "C://Users//Vijay//git//New_Test//New_Car_insurance//New_Insurance//test-output//screenshot//";
 }
