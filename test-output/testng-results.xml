@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="97783" started-at="2019-11-09T10:17:53Z" finished-at="2019-11-09T10:19:31Z">
+  <suite name="Default suite" duration-ms="99165" started-at="2019-11-09T11:46:52Z" finished-at="2019-11-09T11:48:31Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="97783" started-at="2019-11-09T10:17:53Z" finished-at="2019-11-09T10:19:31Z">
+    <test name="Default test" duration-ms="99165" started-at="2019-11-09T11:46:52Z" finished-at="2019-11-09T11:48:31Z">
       <class name="testCase001.TestCase001">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:testCase001.TestCase001@44f75083]" name="beforeSuite" is-config="true" duration-ms="328" started-at="2019-11-09T10:17:53Z" finished-at="2019-11-09T10:17:53Z">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:testCase001.TestCase001@44f75083]" name="beforeSuite" is-config="true" duration-ms="563" started-at="2019-11-09T11:46:51Z" finished-at="2019-11-09T11:46:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:testCase001.TestCase001@44f75083]" name="beforeTest" is-config="true" duration-ms="18044" started-at="2019-11-09T10:17:53Z" finished-at="2019-11-09T10:18:11Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:testCase001.TestCase001@44f75083]" name="beforeTest" is-config="true" duration-ms="23551" started-at="2019-11-09T11:46:52Z" finished-at="2019-11-09T11:47:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:testCase001.TestCase001@44f75083]" name="beforeMethod" is-config="true" duration-ms="7" started-at="2019-11-09T10:18:11Z" finished-at="2019-11-09T10:18:11Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:testCase001.TestCase001@44f75083]" name="beforeMethod" is-config="true" duration-ms="38" started-at="2019-11-09T11:47:15Z" finished-at="2019-11-09T11:47:15Z">
           <params>
             <param index="0">
               <value>
@@ -26,7 +26,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="FAIL" signature="Test0001()[pri:0, instance:testCase001.TestCase001@44f75083]" name="Test0001" duration-ms="79129" started-at="2019-11-09T10:18:11Z" finished-at="2019-11-09T10:19:31Z">
+        <test-method status="FAIL" signature="Test0001()[pri:0, instance:testCase001.TestCase001@44f75083]" name="Test0001" duration-ms="74959" started-at="2019-11-09T11:47:15Z" finished-at="2019-11-09T11:48:30Z">
           <exception class="org.openqa.selenium.StaleElementReferenceException">
             <message>
               <![CDATA[stale element reference: element is not attached to the page document
@@ -35,8 +35,8 @@ For documentation on this error, please visit: https://www.seleniumhq.org/except
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'MUMRBIT-34', ip: '10.0.6.9', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_171'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.87, chrome: {chromedriverVersion: 78.0.3904.70 (edb9c9f3de024..., userDataDir: C:\Users\Vijay\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56316}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 2f21d87cfba077cfe4db9f897e146f7c]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.87, chrome: {chromedriverVersion: 78.0.3904.70 (edb9c9f3de024..., userDataDir: C:\Users\Vijay\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:62208}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 2aba841da7620d485b4c7c701e31c992]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
@@ -45,8 +45,8 @@ For documentation on this error, please visit: https://www.seleniumhq.org/except
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'MUMRBIT-34', ip: '10.0.6.9', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_171'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.87, chrome: {chromedriverVersion: 78.0.3904.70 (edb9c9f3de024..., userDataDir: C:\Users\Vijay\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56316}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 2f21d87cfba077cfe4db9f897e146f7c
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.87, chrome: {chromedriverVersion: 78.0.3904.70 (edb9c9f3de024..., userDataDir: C:\Users\Vijay\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:62208}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 2aba841da7620d485b4c7c701e31c992
 at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -92,7 +92,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test0001 -->
-        <test-method status="PASS" signature="screenShot(org.testng.ITestResult)[pri:0, instance:testCase001.TestCase001@44f75083]" name="screenShot" is-config="true" duration-ms="547" started-at="2019-11-09T10:19:31Z" finished-at="2019-11-09T10:19:31Z">
+        <test-method status="PASS" signature="screenShot(org.testng.ITestResult)[pri:0, instance:testCase001.TestCase001@44f75083]" name="screenShot" is-config="true" duration-ms="563" started-at="2019-11-09T11:48:30Z" finished-at="2019-11-09T11:48:31Z">
           <params>
             <param index="0">
               <value>
@@ -103,7 +103,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- screenShot -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:testCase001.TestCase001@44f75083]" name="afterSuite" is-config="true" duration-ms="640" started-at="2019-11-09T10:19:31Z" finished-at="2019-11-09T10:19:32Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:testCase001.TestCase001@44f75083]" name="afterSuite" is-config="true" duration-ms="562" started-at="2019-11-09T11:48:31Z" finished-at="2019-11-09T11:48:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->

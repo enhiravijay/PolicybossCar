@@ -28,7 +28,9 @@ public class ExcelUtils {
 	public static HSSFCell lastCell;
 
 	public static Map<String, Map<String, String>> setMapData() throws IOException {
-		String path = "D://Desk8//selenium//eclipse-workspace//New_Insurance//src//main//resources//data//TestData.xls";
+		//"C://Users//Vijay//git//New_Test//New_Car_insurance//New_Insurance//src//main//resources//data//TestData.xls"
+		//"D://Desk8//selenium//eclipse-workspace//New_Insurance//src//main//resources//data//TestData.xls"
+		String path = "C://Users//Vijay//git//New_Test//New_Car_insurance//New_Insurance//src//main//resources//data//TestData.xls";
 		FileInputStream ExcelFile = new FileInputStream(path);
 		ExcelWBook = new HSSFWorkbook(ExcelFile);
 		ExcelWSheet = ExcelWBook.getSheetAt(0);

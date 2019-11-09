@@ -1,5 +1,6 @@
 package new_car_insurance_input;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -18,7 +19,7 @@ public class Testrough {
 			driver = new ChromeDriver();
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-			driver.get("http://qa.policyboss.com/car-insurance/buynow/2/ARN-OUJYYNIT-8TN3-BXHD-GBZC-VQ6N1KX90WRT_1724228_96210/NonPOSP/0");
+			driver.get("http://qa.policyboss.com/car-insurance/buynow/2/ARN-CPV0TCUH-Y7QW-GKYI-0ZDN-C1KHZI963MC7_1726428_96299/NonPOSP/0");
 			Thread.sleep(200);
 			driver.findElement(By.xpath("//div[@class='popupScreen']/div[@class='popupclose']")).click();
 			driver.findElement(By.xpath("//a[@id='TabPersonalInfo']")).click();
@@ -79,6 +80,7 @@ public class Testrough {
 			ddlRegisteredCity1.selectByIndex(1);
 			WebElement TabVehicleAddInfo = driver.findElement(By.xpath("//div/a[@id='TabVehicleAddInfo']"));
 			TabVehicleAddInfo.click();
+			Thread.sleep(50);
 			WebElement CheckforToggle1 = driver.findElement(By.xpath("//a[@aria-expanded='true']"));
 			if(CheckforToggle1.getAttribute("aria-expanded").contains("false")) {
 				WebElement ManField = driver.findElement(By.xpath("//div[@class='valerr']"));
@@ -99,20 +101,27 @@ public class Testrough {
 			sendText(PolicyNumber, "PL677991234567");
 			WebElement VehicleColor = driver.findElement(By.xpath("//select[@id='VehicleColor']"));
 			dropDownHandle(VehicleColor, "Black");
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+			String labelvalue = driver.findElement(By.xpath("//label[@id='IsFinancedYes']")).getAttribute("class");
+			System.out.println("Value of a label is "+labelvalue);
+			if(labelvalue.contains("btn-primary")) {
+				WebElement FinancerAgreementType = driver.findElement(By.xpath("//select[@id='FinancerAgreementType']"));
+				dropDownHandle(FinancerAgreementType, "Hypothecation");
+			}
+			WebElement InstitutionName = driver.findElement(By.xpath("//input[@id='InstitutionName']"));
+			InstitutionName.click();
+			sendText(InstitutionName, "BAJAJ AUTO FINANCE");
+			Thread.sleep(60);
+			handleAutoDropDown(InstitutionName,"BAJAJ AUTO FINANCE LTD");
+			WebElement TabNomineeInfo = driver.findElement(By.xpath("//a[@id='TabNomineeInfo']"));
+			TabNomineeInfo.click();
+			WebElement CheckforToggle2 = driver.findElement(By.xpath("//a[@aria-expanded='true']"));
+			if(CheckforToggle2.getAttribute("aria-expanded").contains("false")) {
+				WebElement ManField = driver.findElement(By.xpath("//div[@class='valerr']"));
+				boolean manDis = ManField.isDisplayed();
+				if(manDis==true) {
+					System.out.println("Mandatory field's are not entered.");
+				}
+			}
 			
 	}
 	
@@ -147,6 +156,19 @@ public class Testrough {
 		ele.click();
 		ele.clear();
 		ele.sendKeys(value);
+	}
+	
+	private static void handleAutoDropDown(WebElement autoOptions,String Model) {
+		List<WebElement> opList = autoOptions.findElements(By.xpath("//ul[@id='ui-id-1']/li[contains(text(),'" + Model + "')]"));
+		int opSize = opList.size();
+		for(int i = 0;i<opSize;i++) {
+			if(opSize > 1) {
+				opList.get(i).click();
+				break;
+			}else {
+				opList.get(i).click();
+				}
+		}
 	}
 
 }
