@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="28975" started-at="2019-11-08T11:56:28Z" finished-at="2019-11-08T11:56:57Z">
+  <suite name="Default suite" duration-ms="97783" started-at="2019-11-09T10:17:53Z" finished-at="2019-11-09T10:19:31Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="28975" started-at="2019-11-08T11:56:28Z" finished-at="2019-11-08T11:56:57Z">
+    <test name="Default test" duration-ms="97783" started-at="2019-11-09T10:17:53Z" finished-at="2019-11-09T10:19:31Z">
       <class name="testCase001.TestCase001">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:testCase001.TestCase001@10feca44]" name="beforeSuite" is-config="true" duration-ms="314" started-at="2019-11-08T11:56:28Z" finished-at="2019-11-08T11:56:28Z">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:testCase001.TestCase001@44f75083]" name="beforeSuite" is-config="true" duration-ms="328" started-at="2019-11-09T10:17:53Z" finished-at="2019-11-09T10:17:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:testCase001.TestCase001@10feca44]" name="beforeTest" is-config="true" duration-ms="26667" started-at="2019-11-08T11:56:28Z" finished-at="2019-11-08T11:56:55Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:testCase001.TestCase001@44f75083]" name="beforeTest" is-config="true" duration-ms="18044" started-at="2019-11-09T10:17:53Z" finished-at="2019-11-09T10:18:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:testCase001.TestCase001@10feca44]" name="beforeMethod" is-config="true" duration-ms="42" started-at="2019-11-08T11:56:55Z" finished-at="2019-11-08T11:56:55Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:testCase001.TestCase001@44f75083]" name="beforeMethod" is-config="true" duration-ms="7" started-at="2019-11-09T10:18:11Z" finished-at="2019-11-09T10:18:11Z">
           <params>
             <param index="0">
               <value>
@@ -26,29 +26,27 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="FAIL" signature="Test0001()[pri:0, instance:testCase001.TestCase001@10feca44]" name="Test0001" duration-ms="1906" started-at="2019-11-08T11:56:55Z" finished-at="2019-11-08T11:56:57Z">
-          <exception class="org.openqa.selenium.NoSuchWindowException">
+        <test-method status="FAIL" signature="Test0001()[pri:0, instance:testCase001.TestCase001@44f75083]" name="Test0001" duration-ms="79129" started-at="2019-11-09T10:18:11Z" finished-at="2019-11-09T10:19:31Z">
+          <exception class="org.openqa.selenium.StaleElementReferenceException">
             <message>
-              <![CDATA[no such window: target window already closed
-from unknown error: web view not found
+              <![CDATA[stale element reference: element is not attached to the page document
   (Session info: chrome=78.0.3904.87)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'MUMRBIT-34', ip: '10.0.6.9', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_171'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.87, chrome: {chromedriverVersion: 78.0.3904.70 (edb9c9f3de024..., userDataDir: C:\Users\Vijay\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56278}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 9c6c6d3102763ffa27e85b56731b6299
-*** Element info: {Using=xpath, value=//a[@id='renewSection']}]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.87, chrome: {chromedriverVersion: 78.0.3904.70 (edb9c9f3de024..., userDataDir: C:\Users\Vijay\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56316}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 2f21d87cfba077cfe4db9f897e146f7c]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
+              <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
   (Session info: chrome=78.0.3904.87)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'MUMRBIT-34', ip: '10.0.6.9', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_171'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.87, chrome: {chromedriverVersion: 78.0.3904.70 (edb9c9f3de024..., userDataDir: C:\Users\Vijay\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56278}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 9c6c6d3102763ffa27e85b56731b6299
-*** Element info: {Using=xpath, value=//a[@id='renewSection']}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.87, chrome: {chromedriverVersion: 78.0.3904.70 (edb9c9f3de024..., userDataDir: C:\Users\Vijay\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56316}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 2f21d87cfba077cfe4db9f897e146f7c
 at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -59,16 +57,10 @@ at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCo
 at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at com.sun.proxy.$Proxy13.click(Unknown Source)
-at new_car_insurance_input.New_car_input_page.selectRenewsec(New_car_input_page.java:160)
-at new_car_insurance_input.New_car_input_page.enterVehicleDetail(New_car_input_page.java:463)
-at testCase001.TestCase001.Test0001(TestCase001.java:74)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+at new_car_insurance_input.QuotePage.buyInsurer(QuotePage.java:231)
+at testCase001.TestCase001.Test0001(TestCase001.java:92)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -96,22 +88,22 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
+          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test0001 -->
-        <test-method status="PASS" signature="screenShot(org.testng.ITestResult)[pri:0, instance:testCase001.TestCase001@10feca44]" name="screenShot" is-config="true" duration-ms="11" started-at="2019-11-08T11:56:57Z" finished-at="2019-11-08T11:56:57Z">
+        <test-method status="PASS" signature="screenShot(org.testng.ITestResult)[pri:0, instance:testCase001.TestCase001@44f75083]" name="screenShot" is-config="true" duration-ms="547" started-at="2019-11-09T10:19:31Z" finished-at="2019-11-09T10:19:31Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=Test0001 status=FAILURE method=TestCase001.Test0001()[pri:0, instance:testCase001.TestCase001@10feca44] output={null}]]]>
+                <![CDATA[[TestResult name=Test0001 status=FAILURE method=TestCase001.Test0001()[pri:0, instance:testCase001.TestCase001@44f75083] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- screenShot -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:testCase001.TestCase001@10feca44]" name="afterSuite" is-config="true" duration-ms="2296" started-at="2019-11-08T11:56:58Z" finished-at="2019-11-08T11:57:00Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:testCase001.TestCase001@44f75083]" name="afterSuite" is-config="true" duration-ms="640" started-at="2019-11-09T10:19:31Z" finished-at="2019-11-09T10:19:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->

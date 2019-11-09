@@ -59,7 +59,7 @@ public class ExcelUtils {
 	}
 
 	public static void writeToExcel(Map<Integer, Map<Integer, List<String>>> qmap) throws Exception {
-		String path = "D://Desk8//selenium//eclipse-workspace//New_Insurance//src//main//resources//data//TestData.xls";
+		String path = "C://Users//Vijay///git//New_Test//New_Car_insurance//New_Insurance//src//main//resources//data//TestData.xls";
 		File file = new File(path);
 		FileInputStream ExcelFile = new FileInputStream(file);
 		ExcelWBook = new HSSFWorkbook(ExcelFile);
