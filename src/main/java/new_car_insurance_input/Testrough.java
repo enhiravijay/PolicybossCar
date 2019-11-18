@@ -25,13 +25,14 @@ public class Testrough {
 			driver = new ChromeDriver();
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-			driver.get("http://qa.policyboss.com/car-insurance/buynow/2/ARN-IRPUSF9C-B94N-RV36-AMWD-QFWS2OE78RJL_1726614_96308/NonPOSP/0");
+			String Url = "http://qa.policyboss.com/car-insurance/buynow/2/ARN-SPUJN6L6-D6UW-CSXK-YUAJ-BVH2KFP634LS_1754948_97941/NonPOSP/640";
+			driver.get(Url);
 			Thread.sleep(200);
 			 WebElement closepopup = driver.findElement(By.xpath("//div[@class='popupScreen']/div[@class='popupclose']"));
 			 WebDriverWait waitc = new WebDriverWait(driver, 20);
 			 waitc.until(ExpectedConditions.elementToBeClickable(closepopup));
 			 closepopup.click();
-			/*driver.findElement(By.xpath("//a[@id='TabPersonalInfo']")).click();
+			driver.findElement(By.xpath("//a[@id='TabPersonalInfo']")).click();
 			Thread.sleep(200);
 			WebElement ele = driver.findElement(By.xpath("//select[@id='Salutation']"));
 			ele.click();
@@ -62,7 +63,7 @@ public class Testrough {
 			sendText(ContactMobile, "9999988888");
 			WebElement ContactEmail = driver.findElement(By.xpath("//input[@id='ContactEmail']"));
 			sendText(ContactEmail, "policybosstesting@gmail.com");
-			WebElement TabAddInfo = driver.findElement(By.xpath("//div/a[@id='TabAddInfo']"));
+			/*WebElement TabAddInfo = driver.findElement(By.xpath("//div/a[@id='TabAddInfo']"));
 			TabAddInfo.click();
 			WebElement CheckforToggle = driver.findElement(By.xpath("//a[@aria-expanded='true']"));
 			if(CheckforToggle.getAttribute("aria-expanded").contains("false")) {
@@ -115,14 +116,15 @@ public class Testrough {
 			if(labelvalue.contains("btn-primary")) {
 				WebElement FinancerAgreementType = driver.findElement(By.xpath("//select[@id='FinancerAgreementType']"));
 				dropDownHandle(FinancerAgreementType, "Hypothecation");
+				WebElement InstitutionName = driver.findElement(By.xpath("//input[@id='InstitutionName']"));
+				waitHandle(driver, InstitutionName, 20);
+				System.out.println("Entering Institution Name");
+				InstitutionName.click();
+				InstitutionName.clear();
+				TypeInField(InstitutionName, "BAJAJ AUTO");
+				Thread.sleep(300);
+				handleAutoDropDown("BAJAJ AUTO");
 			}
-			WebElement InstitutionName = driver.findElement(By.xpath("//input[@id='InstitutionName']"));
-			waitHandle(driver, InstitutionName, 20);
-			System.out.println("Entering Institution Name");
-			InstitutionName.click();
-			InstitutionName.clear();
-			TypeInField(InstitutionName, "BAJAJ AUTO");
-			Thread.sleep(300);
 			//InstitutionName.sendKeys(Keys.BACK_SPACE);
 			//Thread.sleep(10);
 			//sendText(InstitutionName, "BAJAJ AUTO FINANC");
@@ -138,7 +140,7 @@ public class Testrough {
 			//executor.executeScript("document.getElementById("textbox_id").value='new value';);
 			//InstitutionName.sendKeys("BAJAJ AUTO FINANC");
 			//InstitutionName.sendKeys(Keys.BACK_SPACE);
-			handleAutoDropDown("BAJAJ AUTO");
+			
 			//selectOptionWithText("BAJAJ AUTO FINANC");
 			//WebElement autoCompleteOption = driver.findElement(By.xpath("//li[@class='ui-menu-item'][contains(text(),'BAJAJ AUTO FINANC')]"));
 			//WebDriverWait wait = new WebDriverWait(driver, 30);
@@ -158,8 +160,8 @@ public class Testrough {
 			}
 			WebElement NomineeRelationID = driver.findElement(By.xpath("//select[@id='NomineeRelationID']"));
 			//NomineeRelationID.click();
-			Select sel = new Select(NomineeRelationID);
-			sel.selectByVisibleText("Father");
+			Select sel21 = new Select(NomineeRelationID);
+			sel21.selectByVisibleText("Father");
 			WebElement NomineeName = driver.findElement(By.xpath("//input[@id='NomineeName']"));
 			sendText(NomineeName, "Test Nominee fname");
 			driver.findElement(By.xpath("//input[@id='NomineeDOB']")).click();

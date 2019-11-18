@@ -2,11 +2,7 @@ package new_car_insurance_input;
 
 import static org.testng.Assert.assertTrue;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -16,12 +12,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
 import basePage.BasePage;
 import utility.ExcelUtils;
 import utility.Log;
 
 public class New_car_input_page extends BasePage {
 
+	Login login;
 	public New_car_input_page(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
@@ -146,7 +144,7 @@ public class New_car_input_page extends BasePage {
 	@FindBy(xpath = "//div/button[@class='verify']")
 	WebElement SelectVerifyBtn;
 	
-	@FindBy(xpath = "//div[@class='popupclose']")
+	@FindBy(xpath = "//div[@class='LoadPopup']/div/div[@class='popupclose']")
 	WebElement ClosePopup;
 	
 	@FindBy(xpath = "//ul[@id='ui-id-1']/li")
@@ -303,6 +301,7 @@ public class New_car_input_page extends BasePage {
 		selectYear(GetFirstRegYearText, ExcelUtils.getMapData("SelectPolicyExpYear"));
 		selectDay(ExcelUtils.getMapData("SelectPolicyExpDay"));
 		ClickfirstRegOK.click();
+		
 		logger.info("entered policy details");
 	}
 
@@ -488,11 +487,20 @@ public class New_car_input_page extends BasePage {
 		enterFullName(ExcelUtils.getMapData("EnterFullName"));
 		enterMobile(ExcelUtils.getMapData("EnterMobileNo"));
 		CalculateQuoteBTN.click();
-		EnterOTP.sendKeys("1111");
-		SelectVerifyBtn.click();
-		Thread.sleep(10000);
-		//ClosePopup.click();
-		jsExecute(ClosePopup);
+		login = new Login(driver);
+		boolean status = login.islogin();
+		if(status) {
+			Thread.sleep(10000);
+			//ClosePopup.click();
+			ClosePopup.click();
+		}else {
+			EnterOTP.sendKeys("1111");
+			SelectVerifyBtn.click();
+			Thread.sleep(10000);
+			ClosePopup.click();
+			//jsExecute(ClosePopup);
+		}
+		
 	}
 	
 

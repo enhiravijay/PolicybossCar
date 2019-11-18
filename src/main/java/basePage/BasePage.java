@@ -64,6 +64,7 @@ public class BasePage  {
 	}
 	
 	public void jsExecute(WebElement element) {
+		waitHandle(driver, element, 10);
 		//WebElement  element=driver.findElement(By.xpath"");  
 		JavascriptExecutor ex=(JavascriptExecutor)driver;
 		ex.executeScript("arguments[0].click()", element);

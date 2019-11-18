@@ -18,22 +18,23 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import basePage.BasePage;
 import new_car_insurance_input.New_car_input_page;
 import new_car_insurance_input.QuotePage;
 import testBase.TestBase;
 import utility.Constant;
 import utility.ExcelUtils;
 
-@Listeners(utility.TestNgListners.class)
+//@Listeners(utility.TestNgListners.class)
 public class TestCase001 extends TestBase {
 	//public WebDriver driver;
+	public BasePage basepage;
 	public Properties prop;
 	public int iTestCaseRow = 1;
 	public int iTestCaseRow1 = 2;
@@ -55,9 +56,9 @@ public class TestCase001 extends TestBase {
 		prop = getprop();
 		//EU = new ExcelUtils();
 		//ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Sheet1");
-		System.out.println("sssttttaaarrrttt");
-		driver.get(prop.getProperty("qaurl"));
-
+		//System.out.println("sssttttaaarrrttt");
+		//Login lg = new Login(driver);
+		//lg.checkLogin();
 	}
 
 	@BeforeMethod

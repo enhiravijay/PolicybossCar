@@ -8,12 +8,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.asserts.SoftAssert;
 
 import basePage.BasePage;
+import new_car_insurance_input.Login;
 import utility.Config;
 
 public class TestBase {
 	public WebDriver driver;
 	Properties prop;
 	BasePage basepage;
+	Login login;
 	
 	
 
@@ -22,8 +24,12 @@ public class TestBase {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		login=new Login(driver);
+		login.checkLogin();
 		return driver;
 	}
+	
+	
 
 	public Properties getprop() throws Exception {
 		Config con = new Config();

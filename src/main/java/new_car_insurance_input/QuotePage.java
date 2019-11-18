@@ -40,6 +40,8 @@ public class QuotePage extends BasePage{
 	@FindBy(xpath = "//div[@id='LoaderImg']")
 	WebElement GetLoader;
 	
+	@FindBy(xpath = "//div[@class='popupScreen']/div[@class='popupclose']")
+	WebElement popupClose;
 	// getInsurerName //div[@class='boxLeft img2 pad-lft']/img
 	// getIdv //li[@class='LiClass']/div[@class='boxLeft resultPrice pad-lft dynamic']/h5/text()
 	// getPremium //div[@class='boxLeft pad-rht dynamic']/a/span
@@ -228,7 +230,9 @@ public class QuotePage extends BasePage{
 				if(instext.contains(ExcelUtils.getMapData("IsInsurerPresent"))) {
 					buyIns.get(i).click();
 					Thread.sleep(100);
-					driver.findElement(By.xpath("//div[@class='popupScreen']/div[@class='popupclose']")).click();
+					isElementDisplayed(popupClose);
+					//driver.findElement(By.xpath("//div[@class='popupScreen']/div[@class='popupclose']")).click();
+					popupClose.click();
 					break;
 				}
 				
