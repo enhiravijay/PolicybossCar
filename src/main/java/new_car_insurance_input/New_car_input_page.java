@@ -300,6 +300,8 @@ public class New_car_input_page extends BasePage {
 		selectMonth(GetRegMonthText, ExcelUtils.getMapData("SelectPolicyExpMonth"));
 		selectYear(GetFirstRegYearText, ExcelUtils.getMapData("SelectPolicyExpYear"));
 		selectDay(ExcelUtils.getMapData("SelectPolicyExpDay"));
+		String pExpDate = ExcelUtils.getMapData("SelectPolicyExpDay")+"-"+ExcelUtils.getMapData("SelectPolicyExpMonth")+"-"+ExcelUtils.getMapData("SelectPolicyExpYear");
+		System.out.println(pExpDate);
 		ClickfirstRegOK.click();
 		
 		logger.info("entered policy details");
@@ -379,11 +381,11 @@ public class New_car_input_page extends BasePage {
 				break;
 			}else if (strActMonindex < strExpMonindex) {
 				waitHandle(driver, CLickNextMonth,20000);
-				CLickNextMonth.click();
+				//CLickNextMonth.click();
 				break;
 			}else if (strActMonindex > strExpMonindex){
 				waitHandle(driver, CLickPreMonth,20000);
-				CLickPreMonth.click();
+				//CLickPreMonth.click();
 				break;
 			}
 		}
