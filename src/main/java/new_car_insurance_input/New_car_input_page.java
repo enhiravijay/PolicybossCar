@@ -9,7 +9,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -29,6 +28,15 @@ public class New_car_input_page extends BasePage {
 
 	@FindBy(xpath = "//a[@id='renewSection']")
 	WebElement RenewSection;
+	
+	@FindBy(xpath = "//button[@id='lblTP']")
+	WebElement btnTPOnly;
+	
+	@FindBy(xpath = "//button[@id='lblOD']")
+	WebElement btnODOnly;
+	
+	@FindBy(xpath = "//button[@id='lblComp']")
+	WebElement btnComprehensive;
 
 	@FindBy(xpath = "//input[@id='MakeModel']")
 	WebElement MakeMyModel;
@@ -150,6 +158,10 @@ public class New_car_input_page extends BasePage {
 	@FindBy(xpath = "//ul[@id='ui-id-1']/li")
 	WebElement autoOptions;
 	
+	@FindBy(xpath = "//ul[@id='ui-id-1']/li")
+	WebElement autoOptionsPlaceofReg;
+	
+	
 	
 	
 
@@ -243,10 +255,11 @@ public class New_car_input_page extends BasePage {
 		final Logger logger = Log.getLogData(Log.class.getName());
 		logger.info("entering place of registeration");
 		PlaceOfRegistration.sendKeys(City);
-		WebElement moveelem = driver.findElement(By.xpath("//div[contains(.,'" + Place + "')]"));
-		Actions actions = new Actions(driver);
-		actions.moveToElement(moveelem).click().build().perform();
-		logger.info("entered place of registration");
+		handleAutoDropDown(autoOptionsPlaceofReg, Place);
+		//WebElement moveelem = driver.findElement(By.xpath("//div[contains(.,'" + Place + "')]"));
+		//Actions actions = new Actions(driver);
+		//actions.moveToElement(moveelem).click().build().perform();
+		//logger.info("entered place of registration");
 	}
 
 	public void selectManfcMonth(String monthValue, String yearValue) throws Exception {
@@ -263,12 +276,15 @@ public class New_car_input_page extends BasePage {
 			FinanceAmt.sendKeys(num);
 		}
 		if (YesNo.equalsIgnoreCase("no")) {
-			IsVehFinancedNo.click();
+			handleWait(IsVehFinancedNo, driver, 40);
+			jsExecute(IsVehFinancedNo);
+			//IsVehFinancedNo.click();
 		}
 	}
 
 	public void clickNextDetail() {
-		NextButton.click();
+		//NextButton.click();
+		jsExecute(NextButton);
 	}
 
 	public void selectClaimOnLastYearPolicy(String yesno) {
@@ -504,6 +520,27 @@ public class New_car_input_page extends BasePage {
 		}
 		
 	}
+	
+	public String verifyTPText() {
+		waitHandle(driver, btnTPOnly, 5000);
+		//btnTPOnly.click();
+		String txtVerify = verifyElementTxt(btnTPOnly);
+		return txtVerify;
+		}
+	
+	public String verifyODText() {
+		waitHandle(driver, btnODOnly, 5000);
+		//btnODOnly.click();
+		String txtVerify = verifyElementTxt(btnODOnly);
+		return txtVerify;
+		}
+	
+	public String verifyCompText() {
+		waitHandle(driver, btnComprehensive, 5000);
+		//btnComprehensive.click();
+		String txtVerify = verifyElementTxt(btnComprehensive);
+		return txtVerify;
+		}
 	
 
 

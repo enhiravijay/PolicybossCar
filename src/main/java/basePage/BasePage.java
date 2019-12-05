@@ -49,9 +49,19 @@ public class BasePage  {
 	
 	public  boolean isElementDisplayed(WebElement element) {
 	    try {
-	        WebDriverWait wait = new WebDriverWait(driver, 1);
+	        WebDriverWait wait = new WebDriverWait(driver, 10);
 	        wait.until(ExpectedConditions.visibilityOf(element));
 	        return element.isDisplayed();
+	    } catch (Exception e) {
+	        return false;
+	    }
+	}
+	
+	public  boolean isElementClickable(WebElement element) {
+	    try {
+	        WebDriverWait wait = new WebDriverWait(driver, 10);
+	        wait.until(ExpectedConditions.elementToBeClickable(element));
+	        return element.isEnabled();
 	    } catch (Exception e) {
 	        return false;
 	    }
@@ -64,7 +74,7 @@ public class BasePage  {
 	}
 	
 	public void jsExecute(WebElement element) {
-		waitHandle(driver, element, 10);
+		waitHandle(driver, element, 20);
 		//WebElement  element=driver.findElement(By.xpath"");  
 		JavascriptExecutor ex=(JavascriptExecutor)driver;
 		ex.executeScript("arguments[0].click()", element);
@@ -79,5 +89,21 @@ public class BasePage  {
  
         return dest;
     }
+	
+	public static void handleWait(WebElement ele,WebDriver driver,int timeout) {
+		WebDriverWait wait = new WebDriverWait(driver, timeout);
+		wait.until(ExpectedConditions.elementToBeClickable(ele));
+	}
+	
+	public static void sendText(WebElement ele,String value) {
+		ele.click();
+		ele.clear();
+		ele.sendKeys(value);
+	}
 
+	public static String verifyElementTxt(WebElement ele) {
+		String eleText = ele.getText();
+		return eleText;
+	}
+	
 }

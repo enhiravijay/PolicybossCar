@@ -4,8 +4,6 @@ import java.io.File;
 import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
-import java.util.List;
-import java.util.Map;
 import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
@@ -14,22 +12,18 @@ import org.openqa.selenium.TakesScreenshot;
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
-import com.relevantcodes.extentreports.LogStatus;
 
 import basePage.BasePage;
 import new_car_insurance_input.New_car_input_page;
-import new_car_insurance_input.QuotePage;
 import testBase.TestBase;
 import utility.Constant;
-import utility.ExcelUtils;
 
 //@Listeners(utility.TestNgListners.class)
 public class TestCase001 extends TestBase {
@@ -50,7 +44,7 @@ public class TestCase001 extends TestBase {
 		extent.loadConfig(new File(Constant.Path_ExtentReport_Config));
 	}
 
-	@BeforeTest
+	/*@BeforeTest
 	public void beforeTest() throws Exception {
 		openBrowser();
 		prop = getprop();
@@ -59,16 +53,18 @@ public class TestCase001 extends TestBase {
 		//System.out.println("sssttttaaarrrttt");
 		//Login lg = new Login(driver);
 		//lg.checkLogin();
-	}
+	}*/
 
 	@BeforeMethod
-	public void beforeMethod(Method method) {
+	public void beforeMethod(Method method) throws Exception {
+		openBrowser();
+		prop = getprop();
 		test = extent.startTest((this.getClass().getSimpleName() + " :: " + method.getName()),method.getName());
 		test.assignAuthor("Vijay Chetgiri");
 		test.assignCategory("SmokeReport--Prod");
 	}
 
-	@Test
+	/*@Test
 	public void Test0001() throws Exception {
 		New_car_input_page car = new New_car_input_page(driver);
 		//Log.startLog(Class.forName(TestCase001));
@@ -91,9 +87,41 @@ public class TestCase001 extends TestBase {
 		//boolean vrcrn = quote.verifyCrn();
 		System.out.println("insurer given is present or not "+quote.ifInsurerPresent());
 		quote.buyInsurer();
+		ProposalPage pb = new ProposalPage(driver);
+		pb.enterContact();
 		Assert.assertTrue(quote.verifyCrn());
 		//Assert.assertTrue(false);
+	}*/
+	
+	/*@Test
+	public void verifyTPText() throws Exception {
+		New_car_input_page car1 = new New_car_input_page(driver);
+		car1.selectRenewsec();
+		Thread.sleep(5000);
+		String verifyTPtext = car1.verifyTPText();
+		System.out.println(verifyTPtext);
+		Assert.assertEquals(verifyTPtext, "T.P. Only (1 Yr)");
+		test.log(LogStatus.INFO, "TP Text Verified successfully");
+	}*/
+	
+	@Test
+	public void verifyODText() {
+		New_car_input_page car1 = new New_car_input_page(driver);
+		car1.selectRenewsec();
+		String verifyODtext = car1.verifyODText();
+		System.out.println(verifyODtext);
+		Assert.assertEquals(verifyODtext, "O.D. Only (1 Yr)");
 	}
+	
+	/*@Test
+	public void verifyComprehensiveText() {
+		New_car_input_page car1 = new New_car_input_page(driver);
+		car1.selectRenewsec();
+		String verifyComptext = car1.verifyCompText();
+		System.out.println(verifyComptext);
+		Assert.assertEquals(verifyComptext, "Comprehensive Plan (1 Yr)");
+		test.log(LogStatus.INFO, "Comp Text Verified successfully");
+	}*/
 
 	@AfterMethod //AfterMethod annotation - This method executes after every test execution
 	public void screenShot(ITestResult result){
@@ -110,18 +138,27 @@ public class TestCase001 extends TestBase {
 				// result.getName() will return name of test case so that screenshot name will be same as test case name
 				FileUtils.copyFile(src, failureImageFile);
 				System.out.println("Successfully captured a screenshot");
+				driver.close();
+				extent.endTest(test);
 			}catch (Exception e){
 				System.out.println("Exception while taking screenshot "+e.getMessage());
 			} 
+		}else {
+			driver.close();
+			extent.endTest(test);
 		}
 	}
+	
+	/*@AfterTest
+	public void afterTest() {
+		driver.close();
+	}*/
 
 
-	@AfterSuite
+	@AfterTest
 	public void afterSuite() throws Exception {
 		extent.flush();
-		extent.endTest(test);
-		Thread.sleep(20);		
+		Thread.sleep(5000);		
 		extent.close();
 	}
 

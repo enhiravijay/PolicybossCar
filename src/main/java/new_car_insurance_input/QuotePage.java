@@ -230,9 +230,9 @@ public class QuotePage extends BasePage{
 				if(instext.contains(ExcelUtils.getMapData("IsInsurerPresent"))) {
 					buyIns.get(i).click();
 					Thread.sleep(100);
-					isElementDisplayed(popupClose);
+					//isElementClickable(popupClose);
 					//driver.findElement(By.xpath("//div[@class='popupScreen']/div[@class='popupclose']")).click();
-					popupClose.click();
+					//popupClose.click();
 					break;
 				}
 				

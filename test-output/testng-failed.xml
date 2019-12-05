@@ -7,9 +7,8 @@
         <methods>
           <include name="beforeSuite"/>
           <include name="afterSuite"/>
-          <include name="Test0001"/>
-          <include name="beforeTest"/>
           <include name="screenShot"/>
+          <include name="verifyTPText"/>
           <include name="beforeMethod"/>
         </methods>
       </class> <!-- testCase001.TestCase001 -->

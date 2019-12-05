@@ -76,6 +76,7 @@ public class Login extends BasePage {
 			Submit.click();
 			isElementDisplayed(CarEle);
 			CarEle.click();
+			Thread.sleep(5000);
 			btnAddQuote.click();
 			
 		}else {
